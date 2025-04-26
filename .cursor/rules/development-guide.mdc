@@ -1,0 +1,72 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# AI_CODING_RULES.mdc
+
+## 🔄 Project Awareness & Context
+- Always read `PLANNING.md` at the start of a new conversation to understand the project's architecture, goals, constraints, and workflow.
+- Always check `TASK.md` before starting any work. If the task isn’t listed, add it with a brief summary and today’s date.
+- Follow naming conventions, file structures, and service boundaries as defined in `PLANNING.md`.
+
+## 🧱 Code Structure & Modularity
+- Never create a single file longer than 500 lines of code. Split into modules or helpers.
+- Organize code by feature or responsibility (e.g., `/services`, `/schemas`, `/routes`).
+- Use consistent, relative imports inside packages.
+
+## 🧪 Testing & Reliability
+- Write Pytest unit tests for every new function/class/module.
+- Always test:
+  - Expected case
+  - Edge case
+  - Failure case
+- Place tests under `/tests`, mirroring the app’s internal structure.
+- Update or extend tests when modifying existing logic.
+
+## ✅ Task Management
+- if you thought of a needed task that is not listed suggest it with the reason why it's needed.
+- check tasks to do from [TASK.md](mdc:docs/TASK.md) if user requested that
+- When task is completed, always make sure to test it out, or to give instructions to the user on how to test if app on how to test if applicable
+- Mark tasks as completed in [TASK.md](mdc:docs/TASK.md) once done.
+- Log discovered subtasks during work in a “Discovered During Work” section in [TASK.md](mdc:docs/TASK.md).
+
+## 📎 Style & Language Conventions
+- Use Python as the default language.
+- Enforce formatting using `black` and import sorting with `isort`.
+- Validate data using `pydantic`.
+- Follow PEP8 and use type hints consistently.
+- Use `FastAPI` for APIs and `SQLAlchemy` or `SQLModel` for ORM, or any other tool only if defined in [PLANNING.md](mdc:docs/PLANNING.md).
+- Write all docstrings using Google-style formatting.
+
+## 📚 Documentation & Clarity
+- Update [README.md](mdc:docs/README.md) if you change dependencies, add features, or modify setup steps.
+- Document unclear logic inline with comments.
+- Use `# Reason:` comments to explain why something is done, not just what is done.
+
+## 🧠 AI-Specific Coding Behavior
+- Never assume missing context—ask for clarification.
+- Never hallucinate functions or libraries—use only real and commonly available Python packages.
+- Only use tools and services explicitly mentioned in [PLANNING.md](mdc:docs/PLANNING.md).
+- Always validate file paths and module names before referencing them.
+- Never delete or rewrite existing code unless it’s part of a [TASK.md](mdc:docs/TASK.md) item or clearly instructed.
+## 🔐 Secrets & Security
+- Never hardcode API keys, secrets, or tokens in code.
+- Always use environment variables (with `.env`) or GitHub Actions secrets to manage credentials securely.
+
+## 🧪 Runtime Awareness
+- Implement retries and timeouts for any long-running operations (e.g., scraping, external API calls).
+- Log errors with enough context to allow tracing (e.g., time, group ID, action).
+- Do not suppress exceptions unless you explicitly handle or log them.
+
+## 📁 Folder & Layout Rules
+- Avoid deep folder nesting (more than 3 levels).
+- Structure the codebase by domain (feature-based) instead of technical layers (models/controllers).
+- Group related files and logic together (e.g., one folder for everything related to Telegram scraping).
+
+## 🧼 Clean Code Principles
+- Prefer clarity over cleverness.
+- Name variables, functions, and files descriptively — avoid vague names like `data`, `temp`, or `misc`.
+- Functions should do one thing. If a function spans more than ~40 lines, consider splitting it.
+- Use comments to explain why something is done, not what (the code should say what).
+- Remove commented-out code and unused imports before committing.

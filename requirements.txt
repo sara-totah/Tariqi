@@ -1,0 +1,30 @@
+# Core FastAPI and related
+fastapi
+uvicorn[standard]
+
+# Pydantic for data validation
+pydantic
+pydantic-settings
+
+# Database ORM and async driver
+sqlalchemy
+psycopg2-binary # Or use asyncpg if you switch to async db
+
+# Telegram interaction
+telethon
+
+# NLP
+camel-tools
+scikit-learn
+
+# Testing
+pytest
+pytest-cov
+pytest-asyncio
+pytest-mock
+
+# Scheduling
+APScheduler
+
+# Other utilities
+python-dotenv 

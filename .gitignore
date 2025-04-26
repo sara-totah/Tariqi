@@ -1,0 +1,12 @@
+# Local environment files
+.env
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# Telethon session files
+*.session
+
+# macOS files
+.DS_Store 
