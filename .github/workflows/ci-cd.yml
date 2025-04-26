@@ -73,6 +73,7 @@ jobs:
           TELEGRAM_API_HASH: dummy_hash
           TELEGRAM_GROUP_IDS: "[123,456]"
           TELEGRAM_PHONE_NUMBER: "+1234567890"
+          WEBHOOK_URL: "http://dummy-webhook-url.com/webhook/telegram"
         run: |
           pytest --cov=app --cov-report=xml
 

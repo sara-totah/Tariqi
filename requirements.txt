@@ -1,6 +1,7 @@
 # Core FastAPI and related
 fastapi
 uvicorn[standard]
+httpx # Required by TestClient
 
 # Pydantic for data validation
 pydantic
@@ -12,6 +13,7 @@ psycopg2-binary # Or use asyncpg if you switch to async db
 
 # Telegram interaction
 telethon
+python-telegram-bot
 
 # NLP
 camel-tools
