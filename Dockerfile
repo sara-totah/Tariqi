@@ -8,6 +8,12 @@ WORKDIR /app
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     build-essential \
+    cmake \
+    libboost-program-options-dev \
+    libboost-system-dev \
+    libboost-thread-dev \
+    zlib1g-dev \
+    libeigen3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the dependencies file to the working directory
