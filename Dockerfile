@@ -14,6 +14,7 @@ RUN apt-get update && \
     libboost-thread-dev \
     zlib1g-dev \
     libeigen3-dev \
+    libboost-test-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the dependencies file to the working directory
